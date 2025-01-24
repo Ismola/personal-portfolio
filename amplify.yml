@@ -1,18 +1,20 @@
 version: 1
-frontend:
-    phases:
+applications:
+  - appRoot: demos/blog
+    frontend:
+      phases:
         preBuild:
-            commands:
-                - 'npm ci --cache .npm --prefer-offline'
+          commands:
+            - npm i -g pnpm
+            - pnpm config set store-dir .pnpm-store
+            - pnpm i
         build:
-            commands:
-                - 'npm run build'
-                - 'mv node_modules ./.amplify-hosting/compute/default'
-    artifacts:
+          commands:
+            - pnpm run build
+      artifacts:
         baseDirectory: .amplify-hosting
         files:
-            - '**/*'
-    cache:
+          - '**/*'
+      cache:
         paths:
-            - '.npm/**/*'
-            
+          - .pnpm-store/**/*
