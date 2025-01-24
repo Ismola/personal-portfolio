@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import netlify from "@astrojs/netlify";
+import awsAmplify from 'astro-aws-amplify';
 import robotsTxt from "astro-robots-txt";
 import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
@@ -12,13 +12,13 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gianmarco.xyz/",
+  site: "https://ismola.dev/",
   integrations: [
     sitemap(),
     robotsTxt({
       sitemap: [
-        "https://gianmarco.xyz/sitemap-index.xml",
-        "https://gianmarco.xyz/sitemap-0.xml",
+        "https://ismola.dev/sitemap-index.xml",
+        "https://ismola.dev/sitemap-0.xml",
       ],
     }),
     solidJs(),
@@ -30,7 +30,8 @@ export default defineConfig({
     remarkPlugins: [remarkReadingTime],
   },
   output: "server",
-  adapter: netlify({ edgeMiddleware: true }),
+  adapter: awsAmplify(),
+
   vite: {
     assetsInclude: "**/*.riv",
   },

@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^5.5.3",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/solid-js": "^4.4.2",
@@ -18,6 +17,7 @@
     "@iconify-json/ri": "^1.2.1",
     "@rive-app/canvas": "^2.21.6",
     "astro": "^4.16.5",
+    "astro-aws-amplify": "^0.1.0",
     "astro-icon": "^1.1.1",
     "astro-robots-txt": "^1.0.0",
     "autoprefixer": "^10.4.20",
