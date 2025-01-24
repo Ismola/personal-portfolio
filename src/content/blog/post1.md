@@ -1,18 +1,11 @@
 ---
 layout: ../../layouts/LayoutBlogPost.astro
-title: "Hello, World"
-description: "this is a post example"
-pubDate: 2023-01-21
+title: "Agradecimiento especial"
+description: "Un reconocimiento a un gran trabajo"
+pubDate: 2025-01-24
 category: "intro"
 ---
 
-# Hi there!
+Quiero dedicar esta entrada a expresar mi agradecimiento especial a [``Gianmarco Cavallo``](https://github.com/Ladvace/astro-bento-portfolio) por crear el increíble template de su portfolio. Gracias a su trabajo, he podido diseñar un portfolio que realmente me representa, de manera rápida y eficiente. 
 
-This Markdown file creates a page at `your-domain.com/post1/`
-
-It probably isn't styled much, but Markdown does support:
-
-- **bold** and _italics._
-- lists
-- [links](https://astro.build)
-- and more!
+Su contribución ha sido de gran ayuda, y sin duda recomiendo su trabajo a quienes busquen inspiración o una base sólida para construir su propio proyecto.

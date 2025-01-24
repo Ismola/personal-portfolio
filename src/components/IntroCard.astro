@@ -2,7 +2,7 @@
 import Card from "./Card/index.astro";
 import Button from "./Button.astro";
 import { LINKS } from "../lib/constants";
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 import Tooltip from "./Tooltip/index";
 import { Image } from "astro:assets";
 ---
@@ -11,11 +11,10 @@ import { Image } from "astro:assets";
   <div class="flex w-full h-full">
     <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
       <div class="flex flex-col h-full">
-        <h6 class="text-sm font-light m-0 text-gray-500">welcome</h6>
+        <h6 class="text-sm font-light m-0 text-gray-500">Bienvenido</h6>
         <p class="m-0 font-light text-xl">
-          Hi, I'm <b class="font-bold">Gianmarco Cavallo</b>, a software
-          developer with strong focus on the user experience, animations and
-          micro interactions
+          ¡Hola!, Soy <b class="font-bold">Ismael Treviño</b>, un full-stack
+          developer con ganas de aprender, amante del UI/UX
         </p>
       </div>
       <div class="flex gap-4">
@@ -31,18 +30,8 @@ import { Image } from "astro:assets";
             <span class="sr-only">Linkedin Profile</span>
           </Button>
         </a>
-        <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
-          <Button aria-label="dribble profile">
-            <Icon name="ri:dribbble-fill" class="h-6" />
-            <span class="sr-only">Dribble Profile</span>
-          </Button>
-        </a>
-        <Tooltip client:visible>
-          <Button aria-label="easter egg btn">
-            <Icon name="ri:emotion-laugh-line" class="h-6" />
-            <span class="sr-only">Easter egg button</span>
-          </Button>
-        </Tooltip>
+       
+
       </div>
     </div>
     <Image

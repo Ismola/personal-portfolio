@@ -7,16 +7,15 @@ const GlobeComponent = () => {
 
   const visitedCountries = [
     "France",
-    "China",
-    "Italy",
-    "Sri Lanka",
-    "Turkey",
     "Greece",
-    "Malta",
-    "Hungary",
-    "Portugal",
-    "Marocco",
+    "Chile",
+    "Bolivia",
+    "Spain",
+    "Netherlands",  // Corregido "Paises bajos" a su nombre en inglés
+    "Morocco",       // Corregido "Marocco" a la ortografía correcta en inglés
+    "United Kingdom" // Corregido "London" a "United Kingdom"
   ];
+  
 
   onMount(() => {
     if (!mapContainer) return;

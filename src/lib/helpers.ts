@@ -13,6 +13,19 @@ export function getCurrentTimeInItaly(): Date {
   return now;
 }
 
+export function getCurrentTimeInSpain(): Date {
+  // Obtiene la hora actual en UTC
+  const nowUTC = new Date();
+
+  // Convierte la hora a la zona horaria de España
+  const spainTime = new Date(
+    nowUTC.toLocaleString("en-US", { timeZone: "Europe/Madrid" })
+  );
+
+  return spainTime;
+}
+
+
 export function formatTimeForItaly(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
     hour: "numeric",
@@ -30,6 +43,20 @@ export function formatTimeForItaly(date: Date): string {
 
   return formattedTime;
 }
+export function formatTimeForSpain(date: Date): string {
+  const options: Intl.DateTimeFormatOptions = {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false, // Formato de 24 horas
+    timeZone: "Europe/Madrid",
+  };
+
+  // Formatear la hora en el formato de 24 horas
+  return new Intl.DateTimeFormat("es-ES", options).format(date);
+}
+
+
 
 export function formatDate(date: Date): string {
   return date.toLocaleDateString("en-US", {
