@@ -1,6 +1,6 @@
 export const LINKS = {
   github: "https://github.com/Ismola",
-  linkedin: "https://www.linkedin.com/in/ismatrevimart/",
+  linkedin: "https://www.linkedin.com/in/ismatrevi/",
   discord: "https://discordapp.com/users/622097358099972106",
   
 };
