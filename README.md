@@ -4,7 +4,7 @@
 
 ![astro-bento-portfolio | Bento-like Personal Porfolio Template](public/preview.png)
 
-To view a my portfolio **[click here](https://ismola.dev)**
+To view my portfolio **[click here](https://ismola.dev)**
 
 ## Features
 
