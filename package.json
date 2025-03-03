@@ -31,6 +31,7 @@
     "svelte": "^4.2.19"
   },
   "devDependencies": {
+    "@astrojs/node": "^9.1.2",
     "@types/d3": "^7.4.3",
     "@unocss/astro": "^0.63.4",
     "@unocss/postcss": "^0.63.4",
