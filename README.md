@@ -25,7 +25,6 @@ To view my portfolio **[click here](https://ismola.dev)**
 - [d3](https://d3js.org/)
 
 
-
 ## Authors ❤️
 
 - Gianmarco - https://github.com/Ladvace
