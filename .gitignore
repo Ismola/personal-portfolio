@@ -1,13 +1,10 @@
 # build output
 dist/
-
 # generated types
 .astro/
 
 # dependencies
 node_modules/
-
-.netlify/
 
 # logs
 npm-debug.log*
@@ -15,12 +12,18 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+.pnpm_store/
+
 # environment variables
 .env
 .env.production
 
 # macOS-specific files
 .DS_Store
+
+# jetbrains setting folder
+.idea/
+
 /.pnpm-store
 /.amplify-hosting
 *.ignored
