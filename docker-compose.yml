@@ -1,5 +1,6 @@
 services:
-  server:
+  app:
+    container_name: app-portfolio
     build:
       context: .
     environment:
