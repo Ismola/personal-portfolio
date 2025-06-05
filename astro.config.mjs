@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     preview: {
-      allowedHosts: ['*']
+      allowedHosts: ['ismola.dev']
     },
     server: {
       allowedHosts: ['*']
