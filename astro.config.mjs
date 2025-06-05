@@ -5,13 +5,12 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://ismola.dev/",
   vite: {
-    preview: {
-      allowedHosts: ['ismola.dev']
-    },
-    server: {
-      allowedHosts: ['*']
-    },
     plugins: [tailwindcss()]
-  }
+  },
+  security: {
+    checkOrigin: true,
+  },
+
 });

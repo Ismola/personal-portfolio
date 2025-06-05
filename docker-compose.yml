@@ -10,21 +10,7 @@ services:
     networks:
       - cloudflare_default
     expose:
-      - 4321 # Expón el puerto interno para Nginx
-
-  # nginx:
-  #   image: nginx:alpine
-  #   container_name: portfolio
-  #   ports:
-  #     - 80:80 # Expón el puerto 80 al exterior
-  #   depends_on:
-  #     - portfolio_app
-  #   restart: unless-stopped
-  #   networks:
-  #     - cloudflare_default
-  #   volumes:
-  #     - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-
+      - 4321
 
 networks:
   cloudflare_default:
