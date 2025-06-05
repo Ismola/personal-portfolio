@@ -18,7 +18,10 @@ services:
     ports:
       - "4321:4321"
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./Caddyfile:/Caddyfile:ro
+    environment:
+      - CADDYFILE_PATH=/Caddyfile
+    command: caddy run --config /Caddyfile --adapter caddyfile
     networks:
       - cloudflare_default
 
