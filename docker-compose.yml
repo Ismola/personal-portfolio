@@ -18,7 +18,7 @@ services:
     ports:
       - "4321:4321"
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
     networks:
       - cloudflare_default
 
