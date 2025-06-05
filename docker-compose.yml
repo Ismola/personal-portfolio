@@ -1,7 +1,6 @@
-
 services:
   portfolio_app:
-    container_name: portfolio
+    container_name: portfolio_app
     build:
       context: .
     environment:
@@ -11,6 +10,17 @@ services:
       - cloudflare_default
     expose:
       - 4321
+  portfolio:
+    image: caddy:alpine
+    container_name: portfolio
+    depends_on:
+      - portfolio_app
+    ports:
+      - "4321:4321"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - cloudflare_default
 
 networks:
   cloudflare_default:
