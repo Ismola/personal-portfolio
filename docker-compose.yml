@@ -1,6 +1,7 @@
+
 services:
-  app:
-    container_name: app-portfolio
+  portfolio_app:
+    container_name: portfolio_app
     build:
       context: .
     environment:
@@ -17,12 +18,13 @@ services:
     ports:
       - 80:80 # Expón el puerto 80 al exterior
     depends_on:
-      - app
+      - portfolio_app
     restart: unless-stopped
     networks:
       - cloudflare_default
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+
 
 networks:
   cloudflare_default:
