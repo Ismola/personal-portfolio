@@ -8,16 +8,5 @@ export default defineConfig({
   site: "https://ismola.dev/",
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      host: true, // Permite conexiones externas
-      allowedHosts: ['ismola.dev'], // Permite ismola.dev en modo dev
-    },
-    preview: {
-      allowedHosts: ['ismola.dev'],
-    },
-  },
-  security: {
-    checkOrigin: false,
-  },
-
+  }
 });
