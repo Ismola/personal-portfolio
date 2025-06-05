@@ -7,7 +7,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: "https://ismola.dev/",
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    preview: {
+      allowedHosts: ['ismola.dev'],
+    },
   },
   security: {
     checkOrigin: true,
