@@ -1,34 +1,20 @@
 services:
   portfolio_app:
-    container_name: portfolio_app
+    container_name: portfolio
     build:
       context: .
     environment:
       NODE_ENV: production
       # Agrega aquí otras variables de entorno si es necesario
     restart: unless-stopped
-    networks:
-      - cloudflare_default
-    expose:
-      - 4321
+    # networks:
+    #   - cloudflare_default
+    
+    ports:
+      - 4321:4321
     # Agrega aquí otros volúmenes o configuraciones si es necesario
 
-  portfolio:
-    image: nginx:alpine
-    container_name: portfolio
-    depends_on:
-      - portfolio_app
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/custom.conf:ro
 
-
-      # Agrega aquí otros volúmenes si es necesario
-    ports:
-      - "4321:4321"
-    networks:
-      - cloudflare_default
-    restart: unless-stopped
-
-networks:
-  cloudflare_default:
-    external: true
+# networks:
+#   cloudflare_default:
+#     external: true
