@@ -22,7 +22,7 @@ services:
     networks:
       - cloudflare_default
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/site.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
 
 networks:
   cloudflare_default:
