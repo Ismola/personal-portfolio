@@ -10,7 +10,7 @@ services:
       - cloudflare_default
     expose:
       - 4321
-      
+
   portfolio:
     image: nginx:alpine
     container_name: portfolio
