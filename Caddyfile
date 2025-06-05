@@ -1,3 +1,0 @@
-:4321 {
-  reverse_proxy portfolio_app:4321
-}
