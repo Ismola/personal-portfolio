@@ -17,7 +17,7 @@ services:
     ports:
       - 80:80 # Expón el puerto 80 al exterior
     depends_on:
-      - server
+      - app
     restart: unless-stopped
     networks:
       - cloudflare_default
