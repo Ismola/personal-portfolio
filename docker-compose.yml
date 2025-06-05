@@ -17,11 +17,9 @@ services:
       - portfolio_app
     ports:
       - "4321:4321"
-    volumes:
-      - ./Caddyfile:/Caddyfile:ro
-    environment:
-      - CADDYFILE_PATH=/Caddyfile
-    command: caddy run --config /Caddyfile --adapter caddyfile
+    configs:
+      - source: caddyfile
+        target: /etc/caddy/Caddyfile
     networks:
       - cloudflare_default
 
