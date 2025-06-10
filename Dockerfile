@@ -39,18 +39,9 @@ COPY . .
 # Run the build script.
 RUN pnpm run build
 
-################################################################################
-# Create a new stage to run the application with minimal runtime dependencies
-FROM base as final
+FROM nginx:alpine as final
 
-ENV NODE_ENV production
-
-USER node
-
-COPY package.json .
-COPY --from=deps /usr/src/app/node_modules ./node_modules
-COPY --from=build /usr/src/app/dist ./dist
+COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 4321
-
-CMD ["pnpm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "4321"]

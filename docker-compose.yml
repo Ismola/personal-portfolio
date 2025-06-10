@@ -1,29 +1,10 @@
 services:
-  portfolio_app:
-    container_name: portfolio
+  nginx:
     build:
       context: .
-    environment:
-      NODE_ENV: production
-    restart: unless-stopped
-    expose:
-      - 4321
-    networks:
-      - cloudflare_default
-
-  nginx:
-    image: nginx:alpine
     container_name: portfolio_nginx
-    depends_on:
-      - portfolio_app
     ports:
       - 3000:4321
-    environment:
-      - NGINX_PORT=4321
-    command: ["/bin/sh", "-c", "envsubst '$$NGINX_PORT' < /etc/nginx/nginx.template.conf > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"]
-    build:
-      context: .
-      dockerfile: nginx.Dockerfile
     networks:
       - cloudflare_default
 
