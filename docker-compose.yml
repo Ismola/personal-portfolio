@@ -8,6 +8,8 @@ services:
     restart: unless-stopped
     expose:
       - 4321
+    networks:
+      - cloudflare_default
 
   nginx:
     image: nginx:alpine
@@ -22,3 +24,9 @@ services:
     build:
       context: .
       dockerfile: nginx.Dockerfile
+    networks:
+      - cloudflare_default
+
+networks:
+  cloudflare_default:
+    external: true
