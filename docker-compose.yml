@@ -1,13 +1,13 @@
 services:
-  nginx:
+  portfolio:
     build:
       context: .
-    container_name: portfolio_nginx
+    container_name: portfolio
     ports:
-      - 3000:4321
-    networks:
-      - cloudflare_default
+      - 4321:4321
+    # networks:
+    #   - cloudflare_default
 
-networks:
-  cloudflare_default:
-    external: true
+# networks:
+#   cloudflare_default:
+#     external: true
