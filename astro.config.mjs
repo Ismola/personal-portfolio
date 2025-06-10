@@ -7,7 +7,13 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     preview: {
-      allowedHosts: ['*']
+      allowedHosts: [
+        'localhost',
+        '127.0.0.1',
+        'ismola.dev',
+        '.ismola.dev', // para subdominios
+        // añade aquí cualquier otro host o subdominio que Cloudflare pueda usar
+      ]
     },
     server: {
       allowedHosts: ['*']
