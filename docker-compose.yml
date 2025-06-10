@@ -7,14 +7,14 @@ services:
       NODE_ENV: production
       # Agrega aquí otras variables de entorno si es necesario
     restart: unless-stopped
-    # networks:
-    #   - cloudflare_default
+    networks:
+      - cloudflare_default
     
     ports:
       - 4321:4321
     # Agrega aquí otros volúmenes o configuraciones si es necesario
 
 
-# networks:
-#   cloudflare_default:
-#     external: true
+networks:
+  cloudflare_default:
+    external: true
