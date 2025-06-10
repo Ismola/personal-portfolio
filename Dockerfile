@@ -41,6 +41,8 @@ RUN pnpm run build
 
 FROM nginx:alpine as final
 
+RUN rm /etc/nginx/conf.d/default.conf
+
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 
