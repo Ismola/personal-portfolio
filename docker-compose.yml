@@ -17,7 +17,7 @@ services:
     depends_on:
       - portfolio_app
     ports:
-      - 4321:4321
+      - 3000:4321
     environment:
       - NGINX_PORT=4321
     command: ["/bin/sh", "-c", "envsubst '$$NGINX_PORT' < /etc/nginx/nginx.template.conf > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"]
