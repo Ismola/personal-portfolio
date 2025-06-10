@@ -5,16 +5,20 @@ services:
       context: .
     environment:
       NODE_ENV: production
-      # Agrega aquí otras variables de entorno si es necesario
     restart: unless-stopped
-    networks:
-      - cloudflare_default
-    
+    expose:
+      - 4321
+
+  nginx:
+    image: nginx:alpine
+    container_name: portfolio_nginx
+    depends_on:
+      - portfolio_app
     ports:
       - 4321:4321
-    # Agrega aquí otros volúmenes o configuraciones si es necesario
-
-
-networks:
-  cloudflare_default:
-    external: true
+    environment:
+      - NGINX_PORT=4321
+    command: ["/bin/sh", "-c", "envsubst '$$NGINX_PORT' < /etc/nginx/nginx.template.conf > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"]
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
