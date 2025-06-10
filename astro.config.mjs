@@ -13,7 +13,7 @@ export default defineConfig({
       allowedHosts: true
     },
     server: {
-      allowedHosts: ['*']
+      allowedHosts: true
     },
     plugins: [tailwindcss()]
   }
