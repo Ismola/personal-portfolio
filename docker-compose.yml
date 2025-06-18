@@ -7,6 +7,7 @@ services:
       - 4321:4321
     networks:
       - cloudflare_default
+    restart: unless-stopped
 
 networks:
   cloudflare_default:
