@@ -2,7 +2,7 @@ name: 🐳 Test Docker Compose
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
     branches: [main]
 
