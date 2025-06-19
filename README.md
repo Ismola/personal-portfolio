@@ -1,47 +1,123 @@
-# Astro Starter Kit: Minimal
+# Personal Portfolio 🚀
 
-```sh
-npm create astro@latest -- --template minimal
+¡Bienvenido/a al repositorio **Personal Portfolio**!  
+Este proyecto es un portafolio personal desarrollado para mostrar tus habilidades, proyectos y experiencia profesional de manera atractiva y moderna.
+
+---
+
+## 📦 Estructura del proyecto
+
+```plaintext
+.
+├── .devcontainer/           # Configuración para entorno de desarrollo remoto
+├── .github/                 # Workflows y configuraciones de GitHub
+│   └── instructions/        # Instrucciones personalizadas para Copilot
+├── src/                     # Código fuente principal del portafolio
+│   ├── pages/               # Páginas Astro
+│   └── styles/              # Estilos globales
+├── public/                  # Archivos estáticos públicos (favicon, etc.)
+├── package.json             # Dependencias y scripts de Node.js
+├── tsconfig.json            # Configuración de TypeScript
+├── astro.config.mjs         # Configuración de Astro
+├── docker-compose.yml       # Orquestación de contenedores Docker
+├── Dockerfile               # Imagen base para despliegue
+├── nginx.conf, nginx.*      # Configuración de Nginx
+└── README.md                # Este archivo
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ ¿Qué hace este proyecto?
 
-## 🚀 Project Structure
+- Presenta tu perfil profesional, habilidades y proyectos destacados.
+- Permite personalización sencilla de contenido y estilos.
+- Optimizado para despliegue en la web y fácil mantenimiento.
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+## 🚀 Cómo iniciar el proyecto
+
+
+1. **Instala las dependencias:**
+   ```bash
+   npm install
+   ```
+
+2. **Inicia el entorno de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Abre tu navegador en** [http://localhost:4321](http://localhost:4321) **para ver el portafolio.**
+
+---
+
+## 🐳 Uso con Docker Compose
+
+Puedes levantar el entorno completo usando Docker Compose:
+
+```bash
+docker compose up --build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Esto construirá la imagen y levantará el contenedor en el puerto `4321`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+> Si necesitas desplegar en la nube, consulta el archivo `README.Docker.md` para instrucciones detalladas sobre build y push de imágenes.
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
+## 🖥️ Entorno de desarrollo remoto (Devcontainer)
 
-All commands are run from the root of the project, from a terminal:
+Este proyecto incluye configuración para [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers).  
+Puedes abrir el proyecto en VS Code usando la extensión **Remote - Containers** para un entorno de desarrollo listo para usar.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**Pasos:**
+1. Abre VS Code.
+2. Presiona `F1` y selecciona `Remote-Containers: Open Folder in Container...`.
+3. Selecciona la carpeta del proyecto.
 
-## 👀 Want to learn more?
+Esto instalará automáticamente dependencias y ejecutará comandos post-instalación definidos en `.devcontainer/devcontainer.json`.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 📜 Scripts disponibles (`package.json`)
+
+| Script      | Descripción                                 |
+|-------------|---------------------------------------------|
+| `dev`       | Inicia el servidor de desarrollo            |
+| `build`     | Compila el proyecto para producción         |
+| `preview`   | Previsualiza el build en modo local         |
+| `astro`     | Ejecuta comandos directos de Astro          |
+
+Ejemplo de uso:
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 📚 Dependencias principales
+
+- **Astro** para desarrollo web moderno.
+- **TailwindCSS** para estilos utilitarios.
+- **TypeScript** para tipado estático.
+- **ESLint** para mantener la calidad y estilo del código.
+
+---
+
+## 💡 Notas adicionales
+
+- Personaliza el contenido editando los archivos en la carpeta `src/`.
+- Para agregar nuevos proyectos o secciones, sigue la estructura y ejemplos existentes.
+
+---
+
+## 📄 Licencia
+
+Incluye aquí la licencia del proyecto si aplica.
+
+---
+
+> ¡No dudes en contribuir o reportar issues!  
+> Hecho con ❤️ y tecnología moderna.
