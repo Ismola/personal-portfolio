@@ -24,7 +24,7 @@ jobs:
       - name: ⏳ Esperar a que el servicio esté listo
         run: |
           for i in {1..20}; do
-            if curl -s http://localhost:80 | grep .; then
+            if curl -s http://localhost:4321 | grep .; then
               echo "Servicio responde correctamente"
               exit 0
             fi
