@@ -1,3 +1,4 @@
+# THIS IS FOR PRODUCTION USE ONLY
 services:
   portfolio:
     build:

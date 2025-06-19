@@ -19,7 +19,7 @@ jobs:
 
       - name: 🐳 Compose up (detached)
         run: |
-          docker compose up -d
+          docker compose -f compose.yml up -d
 
       - name: ⏳ Esperar a que el servicio esté listo
         run: |
@@ -32,9 +32,9 @@ jobs:
             sleep 3
           done
           echo "El servicio no respondió a tiempo"
-          docker compose logs
+          docker compose -f compose.yml logs
           exit 1
 
       - name: 🧹 Compose down
         if: always()
-        run: docker compose down
+        run: docker compose -f compose.yml down

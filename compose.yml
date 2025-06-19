@@ -1,0 +1,9 @@
+# THIS IS FOR LOCAL AND TESTING PURPOSES ONLY
+services:
+  portfolio:
+    build:
+      context: .
+    container_name: portfolio
+    ports:
+      - 4321:4321
+    restart: unless-stopped
