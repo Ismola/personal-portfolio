@@ -1,46 +1,17 @@
 {
-  "name": "astro-bento-portfolio",
+  "name": "test",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --host",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^5.5.3",
-    "@astrojs/rss": "^4.0.9",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/solid-js": "^4.4.2",
-    "@astrojs/svelte": "^5.7.2",
-    "@iconify-json/ri": "^1.2.1",
-    "@rive-app/canvas": "^2.21.6",
-    "astro": "^4.16.18",
-    "astro-icon": "^1.1.1",
-    "astro-robots-txt": "^1.0.0",
-    "autoprefixer": "^10.4.20",
-    "d3": "^7.9.0",
-    "gsap": "^3.12.5",
-    "lenis": "^1.1.14",
-    "mdast-util-to-string": "^4.0.0",
-    "motion": "^10.18.0",
-    "reading-time": "^1.5.0",
-    "solid-js": "^1.9.4",
-    "svelte": "^4.2.19"
-  },
-  "devDependencies": {
-    "@types/d3": "^7.4.3",
-    "@unocss/astro": "^0.63.4",
-    "@unocss/postcss": "^0.63.4",
-    "@unocss/preset-uno": "^0.63.4",
-    "@unocss/reset": "^0.63.4",
-    "autoprefixer": "^10.4.20",
-    "markdown-it": "^14.1.0",
-    "motion": "^10.18.0",
-    "sanitize-html": "^2.13.1",
-    "typescript": "^5.6.3",
-    "unocss": "^0.63.4"
+    "@tailwindcss/vite": "^4.1.8",
+    "astro": "^5.8.1",
+    "lucide": "^0.511.0",
+    "tailwindcss": "^4.1.8"
   }
 }

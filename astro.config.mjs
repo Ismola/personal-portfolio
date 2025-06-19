@@ -1,37 +1,20 @@
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import netlify from "@astrojs/netlify";
-import robotsTxt from "astro-robots-txt";
-import UnoCSS from "@unocss/astro";
-import icon from "astro-icon";
+// @ts-check
+import { defineConfig } from 'astro/config';
 
-import solidJs from "@astrojs/solid-js";
-import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
-
-import svelte from "@astrojs/svelte";
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ismola.dev/",
-  integrations: [
-    sitemap(),
-    robotsTxt({
-      sitemap: [
-        "https://ismola.dev/sitemap-index.xml",
-        "https://ismola.dev/sitemap-0.xml",
-      ],
-    }),
-    solidJs(),
-    UnoCSS({ injectReset: true }),
-    icon(),
-    svelte(),
-  ],
-  markdown: {
-    remarkPlugins: [remarkReadingTime],
-  },
-  output: "server",
-  adapter: netlify({ edgeMiddleware: true }),
+  site: "https://ismola.dev",
+  base: "/",
   vite: {
-    assetsInclude: "**/*.riv",
-  },
+    preview: {
+      // Permite cualquier host en preview
+      allowedHosts: true
+    },
+    server: {
+      allowedHosts: true
+    },
+    plugins: [tailwindcss()]
+  }
 });

@@ -25,8 +25,9 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                "ismola.ismola-extension-pack",
                 "astro-build.astro-vscode",
-                "vivaxy.vscode-conventional-commits"
+                "bradlc.vscode-tailwindcss"
             ]
         }
     },
