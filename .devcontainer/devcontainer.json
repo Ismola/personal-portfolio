@@ -20,7 +20,7 @@
         }
     },
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "pnpm install",
+    "postCreateCommand": "pnpm install && git clone --depth=1 https://github.com/Ismola/personal-copilot-instructions tmp-copilot-instructions && mkdir -p .github && rm -rf .github/instructions && mv tmp-copilot-instructions/.github/instructions .github/ && rm -rf tmp-copilot-instructions",
     // Configure tool-specific properties.
     "customizations": {
         "vscode": {

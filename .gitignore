@@ -29,3 +29,4 @@ pnpm-debug.log*
 *.ignored
 *.afphoto~lock~
 *.Identifier
+.github/instructions
