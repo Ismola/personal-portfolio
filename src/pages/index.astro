@@ -22,7 +22,7 @@ import "../styles/global.css";
 				</div>
 				<div class="mt-6 text-center">
 					<p class="text-lg text-black font-semibold mb-4">
-						Pero puedes echar un vistazo a mis redes:
+						Mientras tanto, conecta conmigo:
 					</p>
 					<div class="flex justify-center gap-6 text-black text-3xl">
 						<a
@@ -73,7 +73,7 @@ import "../styles/global.css";
 							>
 						</a>
 					</div>
-					<!-- Añadido: invitación a enviar correo -->
+
 					<div class="mt-8 flex flex-col items-center">
 						<p class="text-lg text-black font-semibold mb-2">
 							¿Prefieres escribirme?
@@ -83,78 +83,181 @@ import "../styles/global.css";
 							class="inline-flex items-center gap-2 px-4 py-2 bg-black text-amber-400 rounded-lg font-bold text-lg hover:bg-gray-900 transition"
 							aria-label="Enviar correo a code@ismola.dev"
 						>
-							<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-								<rect x="2" y="5" width="20" height="14" rx="2" />
-								<path d="M22 5 12 13 2 5" />
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="22"
+								height="22"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<rect x="2" y="5" width="20" height="14" rx="2"
+								></rect>
+								<path d="M22 5 12 13 2 5"></path>
 							</svg>
 							code@ismola.dev
 						</a>
 					</div>
+
+					<div class="mt-12 text-sm text-black opacity-75 bg-gray-200 p-5 rounded-2xl shadow-2xl">
+						<p class="text-lg text-black font-semibold mb-2">
+							También te puede interesar:
+						</p>
+						<ul class="list-disc list-inside text-left">
+							<li>
+								<a
+									href="https://snake.ismola.dev/"
+									class="hover:text-gray-800 transition"
+									>🐍 Recreación del mítico juego Snake</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://african-art.ismola.dev/"
+									class="hover:text-gray-800 transition"
+									>🎨 Landing template inspirado en arte
+									africano</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://ismola-apple.netlify.app/"
+									class="hover:text-gray-800 transition"
+									>🍎 Landing template estilo Apple</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://ismola-restaurant.netlify.app/"
+									class="hover:text-gray-800 transition"
+									>🍽️ Landing template para restaurante
+									elegante</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://ismola-japan.netlify.app/"
+									class="hover:text-gray-800 transition"
+									>🗾 Landing template inspirado en Japón</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://jw-hitster.ismola.dev/"
+									class="hover:text-gray-800 transition"
+									>📖 Hitster Bíblico</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://trivial.ismola.dev/"
+									class="hover:text-gray-800 transition"
+									>💻 Trivial de informática y programación</a
+								>
+							</li>
+							<li>
+								<a
+									href="https://github.com/ismola"
+									class="hover:text-gray-800 transition"
+									>✨ Descubre más proyectos en mi GitHub</a
+								>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
+			<!-- Script para el fondo animado de código -->
+			<script>
+				(function () {
+					const canvas = document.getElementById(
+						"code-bg-canvas",
+					) as HTMLCanvasElement;
+					const ctx = canvas.getContext("2d");
+					let width: number,
+						height: number,
+						columns: number,
+						fontSize: number,
+						codeLines: number[];
+					const chars =
+						"const let function return if else for while () {} [] = + - * / < > ; : . , \" ' 0123456789 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+					// Filtrar caracteres vacíos (espacios)
+					const charArr = chars
+						.split("")
+						.filter((c) => c.trim().length > 0);
+					let columnChars: string[] = [];
+					let charTimers: number[] = [];
+					const charChangeDelay = 6; // Cuantos frames esperar antes de cambiar la letra (más alto = más lento)
+
+					function resize() {
+						width = window.innerWidth;
+						height = window.innerHeight;
+						canvas.width = width;
+						canvas.height = height;
+						fontSize = 22; // Más pequeño para más densidad
+						columns = Math.floor(width / fontSize);
+						codeLines = Array.from(
+							{ length: columns },
+							() => Math.random() * height,
+						);
+						// Inicializar arrays para letras y temporizadores
+						columnChars = Array.from(
+							{ length: columns },
+							() =>
+								charArr[
+									Math.floor(Math.random() * charArr.length)
+								],
+						);
+						charTimers = Array.from({ length: columns }, () =>
+							Math.floor(Math.random() * charChangeDelay),
+						);
+					}
+
+					function draw() {
+						if (!ctx) return;
+						ctx.clearRect(0, 0, width, height);
+						ctx.globalAlpha = 0.22; // Opacidad más visible
+						ctx.font = `${fontSize}px monospace`;
+						ctx.fillStyle = "#92400e"; // Ámbar más oscuro para mejor contraste
+						for (let i = 0; i < columns; i++) {
+							// Cambiar la letra solo si el temporizador llega a 0
+							if (charTimers[i] <= 0) {
+								columnChars[i] =
+									charArr[
+										Math.floor(
+											Math.random() * charArr.length,
+										)
+									];
+								charTimers[i] = charChangeDelay;
+							} else {
+								charTimers[i]--;
+							}
+							const text = columnChars[i];
+							ctx.fillText(text, i * fontSize, codeLines[i]);
+							if (
+								codeLines[i] > height &&
+								Math.random() > 0.975
+							) {
+								codeLines[i] = 0;
+							} else {
+								codeLines[i] += fontSize;
+							}
+						}
+					}
+
+					resize();
+					window.addEventListener("resize", resize);
+					canvas.style.position = "fixed";
+					canvas.style.top = "0";
+					canvas.style.left = "0";
+					canvas.style.width = "100vw";
+					canvas.style.height = "100vh";
+					canvas.style.zIndex = "0";
+					canvas.style.pointerEvents = "none";
+
+					setInterval(draw, 60);
+				})();
+			</script>
 		</main>
-		<!-- Script para el fondo animado de código -->
-		<script>
-		(function() {
-			const canvas = document.getElementById('code-bg-canvas') as HTMLCanvasElement;
-			const ctx = canvas.getContext('2d');
-			let width: number, height: number, columns: number, fontSize: number, codeLines: number[];
-			const chars = 'const let function return if else for while () {} [] = + - * / < > ; : . , " \' 0123456789 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-			// Filtrar caracteres vacíos (espacios)
-			const charArr = chars.split('').filter(c => c.trim().length > 0);
-			let columnChars: string[] = [];
-			let charTimers: number[] = [];
-			const charChangeDelay = 6; // Cuantos frames esperar antes de cambiar la letra (más alto = más lento)
-
-			function resize() {
-				width = window.innerWidth;
-				height = window.innerHeight;
-				canvas.width = width;
-				canvas.height = height;
-				fontSize = 22; // Más pequeño para más densidad
-				columns = Math.floor(width / fontSize);
-				codeLines = Array.from({length: columns}, () => Math.random() * height);
-				// Inicializar arrays para letras y temporizadores
-				columnChars = Array.from({length: columns}, () => charArr[Math.floor(Math.random() * charArr.length)]);
-				charTimers = Array.from({length: columns}, () => Math.floor(Math.random() * charChangeDelay));
-			}
-
-			function draw() {
-				if (!ctx) return;
-				ctx.clearRect(0, 0, width, height);
-				ctx.globalAlpha = 0.22; // Opacidad más visible
-				ctx.font = `${fontSize}px monospace`;
-				ctx.fillStyle = '#92400e'; // Ámbar más oscuro para mejor contraste
-				for (let i = 0; i < columns; i++) {
-					// Cambiar la letra solo si el temporizador llega a 0
-					if (charTimers[i] <= 0) {
-						columnChars[i] = charArr[Math.floor(Math.random() * charArr.length)];
-						charTimers[i] = charChangeDelay;
-					} else {
-						charTimers[i]--;
-					}
-					const text = columnChars[i];
-					ctx.fillText(text, i * fontSize, codeLines[i]);
-					if (codeLines[i] > height && Math.random() > 0.975) {
-						codeLines[i] = 0;
-					} else {
-						codeLines[i] += fontSize;
-					}
-				}
-			}
-
-			resize();
-			window.addEventListener('resize', resize);
-			canvas.style.position = 'fixed';
-			canvas.style.top = "0";
-			canvas.style.left = "0";
-			canvas.style.width = '100vw';
-			canvas.style.height = '100vh';
-			canvas.style.zIndex = "0";
-			canvas.style.pointerEvents = 'none';
-
-			setInterval(draw, 60);
-		})();
-		</script>
 	</body>
 </html>
