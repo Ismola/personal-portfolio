@@ -1,0 +1,34 @@
+name: Deploy
+
+# Se ejecuta en push a main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
+  # DOCKER PUBLISH
+  # Si quieres deshabilitarlo, descomenta la línea: if: false
+  docker-publish:
+    needs: test
+    # if: false  # Descomenta para deshabilitar
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+    uses: ./.github/workflows/docker-publish.yml
+
+  notify-webhook:
+    needs: [
+      test,
+       docker-publish]
+    runs-on: ubuntu-latest
+    if: success()  # Solo se ejecuta si los jobs anteriores fueron exitosos
+    steps:
+      - name: Webhook to Service
+        run: |
+          curl -f -X POST ${{ secrets.WEBHOOK_URL }} || echo "Error haciendo POST"
