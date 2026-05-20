@@ -1,6 +1,7 @@
 name: 🐳 Test Docker Compose
 
 on:
+  workflow_call: {}
   push:
     branches: [master]
   pull_request:
