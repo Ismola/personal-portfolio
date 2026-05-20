@@ -1,15 +1,8 @@
-# THIS IS FOR PRODUCTION USE ONLY
+# THIS IS FOR LOCAL AND TESTING PURPOSES ONLY
 services:
   portfolio:
-    build:
-      context: .
+    image: ghcr.io/ismola/personal-portfolio:master
     container_name: portfolio
     ports:
       - 4321:4321
-    networks:
-      - cloudflare_default
     restart: unless-stopped
-
-networks:
-  cloudflare_default:
-    external: true

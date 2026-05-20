@@ -14,6 +14,14 @@ WORKDIR /usr/src/app
 RUN --mount=type=cache,target=/root/.npm \
     npm install -g pnpm@${PNPM_VERSION}
 
+# Keep Docker builds deterministic with the committed lockfile instead of
+# deferring installs for freshly published transitive packages.
+RUN pnpm config set minimumReleaseAge 0
+
+# Allow dependency install scripts inside the isolated image build so native
+# binaries required by Astro/Tailwind can be prepared during install.
+RUN pnpm config set dangerouslyAllowAllBuilds true
+
 ################################################################################
 # Create a stage for installing production dependecies.
 FROM base as deps
